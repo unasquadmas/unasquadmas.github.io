@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una Squad Más</title>
+    <link rel="stylesheet" href="dist/output.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+
+<body class="bg-white dark:bg-slate-900 antialiased text-slate-500 dark:text-slate-400">
+    <div class="sticky top-0 backdrop-blur max-w-7xl xl:m-auto sm:px-8">
+        <div class="mx-auto px-4 sm:px-6">
+            <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+                <div class="flex justify-start sm:w-0 sm:flex-1">
+                    <a href="">
+                        <img class="h-8 w-auto sm:h-10" src="img/usm.webp" alt="">
+                    </a>
+                </div>
+                <h1 class="mx-auto text-2xl font-bold">2 Premades 1 Cup</h1>
+                <div x-data="{open: false}" class="hidden sm:flex items-center justify-end sm:flex-1 sm:w-0">
+                    <button type="button" @click="open=!open">
+                        <span class="dark:hidden">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-6 h-6">
+                                <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="fill-sky-400/20 stroke-sky-500">
+                                </path>
+                                <path
+                                    d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
+                                    class="stroke-sky-500"></path>
+                            </svg>
+                        </span>
+                        <span class="hidden dark:inline">
+                            <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"
+                                    class="fill-sky-400/20"></path>
+                                <path
+                                    d="m17.715 15.15.95.316a1 1 0 0 0-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 0 0-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 0 1-2.72.718v2a7.47 7.47 0 0 0 3.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 0 1 9 9.5H7a7.5 7.5 0 0 0 7.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 0 0 7 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z"
+                                    class="fill-sky-500"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M17 3a1 1 0 0 1 1 1 2 2 0 0 0 2 2 1 1 0 1 1 0 2 2 2 0 0 0-2 2 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 1 1 0-2 2 2 0 0 0 2-2 1 1 0 0 1 1-1Z"
+                                    class="fill-sky-500"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <ul x-show="open" @click.outside="open=false"
+                        class="absolute z-50 top-full right-0 bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-0 dark:highlight-white/5 dark:text-slate-300">
+                        <li id="theme-light" @click="changeTheme('light');open=!open"
+                            class="py-1 px-2 flex items-center cursor-pointer">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-6 h-6 mr-2">
+                                <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                    class="stroke-slate-400 dark:stroke-slate-500"></path>
+                                <path
+                                    d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
+                                    class="stroke-slate-400 dark:stroke-slate-500"></path>
+                            </svg>
+                            Claro
+                        </li>
+                        <li id="theme-dark" @click="changeTheme('dark');open=!open"
+                            class="py-1 px-2 flex items-center cursor-pointer">
+                            <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 mr-2">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"
+                                    class="fill-transparent"></path>
+                                <path
+                                    d="m17.715 15.15.95.316a1 1 0 0 0-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 0 0-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 0 1-2.72.718v2a7.47 7.47 0 0 0 3.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 0 1 9 9.5H7a7.5 7.5 0 0 0 7.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 0 0 7 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z"
+                                    class="fill-slate-400 dark:fill-slate-500"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M17 3a1 1 0 0 1 1 1 2 2 0 0 0 2 2 1 1 0 1 1 0 2 2 2 0 0 0-2 2 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 1 1 0-2 2 2 0 0 0 2-2 1 1 0 0 1 1-1Z"
+                                    class="fill-slate-400 dark:fill-slate-500"></path>
+                            </svg>
+                            Oscuro
+                        </li>
+                        <li id="theme-system" @click="changeTheme('system');open=!open"
+                            class="py-1 px-2 flex items-center cursor-pointer">
+                            <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 mr-2">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z"
+                                    stroke-width="2" stroke-linejoin="round"
+                                    class="stroke-slate-400 dark:stroke-slate-500"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14 15c0 3 2 5 2 5H8s2-2 2-5"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="stroke-slate-400 dark:stroke-slate-500"></path>
+                            </svg>
+                            Sistema
+                        </li>
+                    </ul>
+                    <script>
+                        function menuThemeLight() {
+                            document.getElementById('theme-light').children[0].children[0].classList.remove(
+                                'stroke-slate-400');
+                            document.getElementById('theme-light').children[0].children[0].classList.remove(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-light').children[0].children[1].classList.remove(
+                                'stroke-slate-400');
+                            document.getElementById('theme-light').children[0].children[1].classList.remove(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-light').children[0].children[0].classList.add(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-light').children[0].children[0].classList.add(
+                                'stroke-sky-500');
+                            document.getElementById('theme-light').children[0].children[1].classList.add(
+                                'stroke-sky-500');
+                            document.getElementById("theme-light").classList.add("text-sky-500");
+
+                            document.getElementById('theme-dark').children[0].children[0].classList.remove(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
+                                'fill-sky-500');
+                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
+                                'fill-sky-500');
+                            document.getElementById('theme-dark').children[0].children[0].classList.add(
+                                'fill-transparent');
+                            document.getElementById('theme-dark').children[0].children[1].classList.add(
+                                'fill-slate-400');
+                            document.getElementById('theme-dark').children[0].children[1].classList.add(
+                                'dark:fill-slate-500');
+                            document.getElementById('theme-dark').children[0].children[2].classList.add(
+                                'fill-slate-400');
+                            document.getElementById('theme-dark').children[0].children[2].classList.add(
+                                'dark:fill-slate-500');
+                            document.getElementById("theme-dark").classList.remove("text-sky-500");
+
+                            document.getElementById('theme-system').children[0].children[0].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById('theme-system').children[0].children[0].classList.remove(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-system').children[0].children[1].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById('theme-system').children[0].children[0].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-system').children[0].children[0].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-system').children[0].children[1].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-system').children[0].children[1].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById("theme-system").classList.remove("text-sky-500");
+
+                            localStorage.theme = 'light';
+                            document.documentElement.classList.remove('dark');
+                        }
+
+                        function menuThemeDark() {
+                            document.getElementById('theme-dark').children[0].children[0].classList.remove(
+                                'fill-transparent');
+                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
+                                'fill-slate-400');
+                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
+                                'dark:fill-slate-500');
+                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
+                                'fill-slate-400');
+                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
+                                'dark:fill-slate-500');
+                            document.getElementById('theme-dark').children[0].children[0].classList.add(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-dark').children[0].children[1].classList.add(
+                                'fill-sky-500');
+                            document.getElementById('theme-dark').children[0].children[2].classList.add(
+                                'fill-sky-500');
+                            document.getElementById("theme-dark").classList.add("text-sky-500");
+
+                            document.getElementById('theme-light').children[0].children[0].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-light').children[0].children[0].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-light').children[0].children[1].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-light').children[0].children[1].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-light').children[0].children[0].classList.remove(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-light').children[0].children[0].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById('theme-light').children[0].children[1].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById("theme-light").classList.remove("text-sky-500");
+
+                            document.getElementById('theme-system').children[0].children[0].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-system').children[0].children[0].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-system').children[0].children[1].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-system').children[0].children[1].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-system').children[0].children[0].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById('theme-system').children[0].children[0].classList.remove(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-system').children[0].children[1].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById("theme-system").classList.remove("text-sky-500");
+                        }
+
+                        function menuThemeSystem() {
+                            document.getElementById('theme-system').children[0].children[0].classList.remove(
+                                'stroke-slate-400');
+                            document.getElementById('theme-system').children[0].children[0].classList.remove(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-system').children[0].children[1].classList.remove(
+                                'stroke-slate-400');
+                            document.getElementById('theme-system').children[0].children[1].classList.remove(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-system').children[0].children[0].classList.add(
+                                'stroke-sky-500');
+                            document.getElementById('theme-system').children[0].children[0].classList.add(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-system').children[0].children[1].classList.add(
+                                'stroke-sky-500');
+                            document.getElementById("theme-system").classList.add("text-sky-500");
+
+                            document.getElementById('theme-light').children[0].children[0].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-light').children[0].children[0].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-light').children[0].children[1].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-light').children[0].children[1].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-light').children[0].children[0].classList.remove(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-light').children[0].children[0].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById('theme-light').children[0].children[1].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById("theme-light").classList.remove("text-sky-500");
+
+                            document.getElementById('theme-dark').children[0].children[0].classList.remove(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
+                                'fill-sky-500');
+                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
+                                'fill-sky-500');
+                            document.getElementById('theme-dark').children[0].children[0].classList.add(
+                                'fill-transparent');
+                            document.getElementById('theme-dark').children[0].children[1].classList.add(
+                                'fill-slate-400');
+                            document.getElementById('theme-dark').children[0].children[1].classList.add(
+                                'dark:fill-slate-500');
+                            document.getElementById('theme-dark').children[0].children[2].classList.add(
+                                'fill-slate-400');
+                            document.getElementById('theme-dark').children[0].children[2].classList.add(
+                                'dark:fill-slate-500');
+                            document.getElementById("theme-dark").classList.remove("text-sky-500");
+                        }
+
+                        if (localStorage.theme === 'light') {
+                            menuThemeLight();
+                        } else if (localStorage.theme === 'dark') {
+                            menuThemeDark();
+                        } else {
+                            menuThemeSystem();
+                        }
+
+                        function changeTheme(theme) {
+                            if (theme === 'light') {
+                                menuThemeLight();
+                                localStorage.theme = 'light';
+                                document.documentElement.classList.remove('dark');
+                            } else if (theme === 'dark') {
+                                menuThemeDark();
+                                localStorage.theme = 'dark';
+                                document.documentElement.classList.add('dark');
+                            } else if (theme === 'system') {
+                                menuThemeSystem();
+                                localStorage.removeItem('theme');
+                                if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                                    document.documentElement.classList.add('dark');
+                                } else {
+                                    document.documentElement.classList.remove('dark');
+                                }
+                            }
+                        }
+                    </script>
+                    <a href="https://www.facebook.com/profile.php?id=100046955563453" target="_blank"
+                        rel="noopener noreferrer"
+                        class="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300">
+                        <span class="sr-only">Facebook USM</span>
+                        <svg viewBox="0 0 16 16" class="w-5 h-5" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.twitch.tv/unasquadmas" target="_blank" rel="noopener noreferrer"
+                        class="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300">
+                        <span class="sr-only">Twitch USM</span>
+                        <svg viewBox="0 0 16 16" class="w-5 h-5" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M3.857 0 1 2.857v10.286h3.429V16l2.857-2.857H9.57L14.714 8V0H3.857zm9.714 7.429-2.285 2.285H9l-2 2v-2H4.429V1.143h9.142v6.286z" />
+                            <path d="M11.857 3.143h-1.143V6.57h1.143V3.143zm-3.143 0H7.571V6.57h1.143V3.143z" />
+                        </svg>
+                    </a>
+                </div>
+                <div x-data="{open: false}" class="ml-2 -my-1 sm:hidden">
+                    <button type="button" @click="open=!open"
+                        class="text-slate-500 w-8 h-8 flex items-center justify-center hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
+                        <span class="sr-only">Navigation</span>
+                        <svg width="24" height="24" fill="none" aria-hidden="true">
+                            <path
+                                d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                        </svg>
+                    </button>
+                    <div x-show="open" @click.outside="open=false"
+                        class="fixed top-4 right-4 w-full max-w-xs bg-white rounded-lg shadow-lg p-6 text-base font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400 dark:highlight-white/5">
+                        <button type="button" @click="open=!open"
+                            class="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
+                            <span class="sr-only">Close navigation</span>
+                            <svg viewBox="0 0 10 10" class="w-2.5 h-2.5 overflow-visible" aria-hidden="true">
+                                <path d="M0 0L10 10M10 0L0 10" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round"></path>
+                            </svg>
+                        </button>
+                        <ul class="space-y-6">
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=100046955563453" target="_blank"
+                                    rel="noopener noreferrer" class="hover:text-sky-500 dark:hover:text-sky-400">
+                                    Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.twitch.tv/unasquadmas" target="_blank" rel="noopener noreferrer"
+                                    class="hover:text-sky-500 dark:hover:text-sky-400">
+                                    Twitch
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="mt-6 pt-6 border-t border-slate-200 dark:border-slate-200/10">
+                            <div class="flex items-center justify-between">
+                                <label for="theme" class="text-slate-700 font-normal dark:text-slate-400">
+                                    Cambiar tema
+                                </label>
+                                <div
+                                    class="relative flex items-center ring-1 ring-slate-900/10 rounded-lg shadow-sm p-2 text-slate-700 font-semibold dark:bg-slate-600 dark:ring-0 dark:highlight-white/5 dark:text-slate-200">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-6 h-6 mr-2 dark:hidden">
+                                        <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                            class="stroke-slate-400 dark:stroke-slate-500"></path>
+                                        <path
+                                            d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
+                                            class="stroke-slate-400 dark:stroke-slate-500"></path>
+                                    </svg>
+                                    <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 mr-2 hidden dark:block">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"
+                                            class="fill-transparent"></path>
+                                        <path
+                                            d="m17.715 15.15.95.316a1 1 0 0 0-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 0 0-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 0 1-2.72.718v2a7.47 7.47 0 0 0 3.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 0 1 9 9.5H7a7.5 7.5 0 0 0 7.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 0 0 7 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z"
+                                            class="fill-slate-400"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M17 3a1 1 0 0 1 1 1 2 2 0 0 0 2 2 1 1 0 1 1 0 2 2 2 0 0 0-2 2 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 1 1 0-2 2 2 0 0 0 2-2 1 1 0 0 1 1-1Z"
+                                            class="fill-slate-400"></path>
+                                    </svg>
+                                    <label id="label-theme-selected-mobile"></label>
+                                    <svg class="w-6 h-6 ml-2 text-slate-400" fill="none">
+                                        <path d="m15 11-3 3-3-3" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    <select id="theme-mobile" @change="changeThemeMobile;open=!open"
+                                        class="absolute appearance-none inset-0 w-full h-full opacity-0">
+                                        <option value="light">Claro</option>
+                                        <option value="dark">Oscuro</option>
+                                        <option value="system">Sistema</option>
+                                    </select>
+                                    <script>
+                                        var select = document.getElementById('theme-mobile');
+
+                                        if (localStorage.theme === 'light') {
+                                            select.value = 'light';
+                                        } else if (localStorage.theme === 'dark') {
+                                            select.value = 'dark';
+                                        } else {
+                                            select.value = 'system';
+                                        }
+
+                                        var text = select.options[select.selectedIndex].text;
+                                        document.getElementById('label-theme-selected-mobile').innerHTML = text;
+
+                                        function changeThemeMobile() {
+                                            var select = document.getElementById('theme-mobile');
+                                            var text = select.options[select.selectedIndex].text;
+                                            var value = select.options[select.selectedIndex].value;
+                                            document.getElementById('label-theme-selected-mobile').innerHTML = text;
+
+                                            if (value === 'light') {
+                                                localStorage.theme = 'light';
+                                                document.documentElement.classList.remove('dark');
+                                            } else if (value === 'dark') {
+                                                localStorage.theme = 'dark';
+                                                document.documentElement.classList.add('dark');
+                                            } else if (value === 'system') {
+                                                localStorage.removeItem('theme');
+                                                if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                                                    document.documentElement.classList.add('dark');
+                                                } else {
+                                                    document.documentElement.classList.remove('dark');
+                                                }
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl xl:m-auto sm:px-8 px-5">
+        <div class="text-justify sm:text-center pt-2 pb-4 2xl:px-72 xl:px-60">
+            ¡Gracias!, formas parte de la primera edición de 2 PREMADES 1 CUP, eso quiere decir que te follarás a USM en
+            reiteradas ocasiones. Agradecemos infinitamente tu compromiso, esperamos las reglas sean sencillas y si no
+            lo son, una disculpa, lo redactó la Lic. Añañin (Mery_Bros) y es medio mamadora, así que haz tantas
+            preguntas como desees. Sin más que decir, esperamos que disfrutes este torneo.
+            <br>
+            Sykess se la come y Fernan será expulsado después de que leas las reglas. Te quiere:
+            <br>
+            Una Squad Más ❤️.
+        </div>
+
+        <div
+            class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700 mb-5">
+            <ul class="flex flex-wrap -mb-px">
+                <li class="mr-2">
+                    <a href="index.html" aria-current="page"
+                        class="inline-block p-4 text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500">
+                        Torneo
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="overview.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Overview
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="darslai.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Fase Dars Lai
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="monstercrazy.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Fase Monster Crazy
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="sash.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Fase Sash
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="pcdios.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Fase PCDios
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="final.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Fase Final
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Reglas sobrevivientes</h1>
+                <div class="text-justify leading-loose">
+                    1. No es válido repetir más de 2 perks, tratándose de las perks generales.
+                    <br>
+                    2. En el caso de las perks de agotamiento, no podrá repetirse en más de una ocasión.
+                    <br>
+                    <p class="ml-6">✓ Ejemplo regla 1 y 2: dos Iron Will, sólo un chungo.</p>
+                    3. Los personajes tampoco podrán ser repetidos, salvo aquellos sobrevivientes que tengan skins
+                    legendarias que son de un aspecto totalmente diferente.
+                    <br>
+                    <p class="ml-6">✓ Ejemplo regla 3: Jill Valentine y Claire Redfield.</p>
+                    4. Los objetos y addons tendrán como rareza máxima verde.
+                    <br>
+                    5. No podrán repetirse los objetos.
+                    <br>
+                    <p class="ml-6">
+                        ✓ En los dos supuestos anteriores (4 y 5), quedarán exentos del cumplimiento, aquellos equipos
+                        que hayan conseguido un "Fernan".
+                    </p>
+                    6. Estará prohibido usar Objeto de Obsesión.
+                    <br>
+                    7. En el caso de "Demuestra lo que Vales", no podrá repetirse en más de una ocasión.
+                    <br>
+                    8. En el caso de los "Tótems de Bendición", sólo podrán ser utilizados uno de cada uno.
+                    <br>
+                    <p class="ml-6">✓ Ejemplo: sólo uno de curación, sólo uno de exponencial, etc.</p>
+                    9. A partir de la fase "PCDIOS", la regla que impide que los survivors jueguen sin repetir
+                    sus
+                    perks de agotamiento queda anulada. Sin omitir lo dispuesto en el art. 1.
+                </div>
+            </div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Reglas asesinos</h1>
+                <div class="text-justify leading-loose">
+                    1. Permitido tunelear, campear y sluggear sin restricción de tiempo o cantidad.
+                    <br>
+                    2. Se considerará cuelgue efectivo cualquier cuelgue realizado, o:
+                    <p class="ml-6">
+                        I. Cuando el survivor en cuestión, haya sido abandonado por otro survivor a modo de estrategia
+                        para encontrar trampilla.
+                        <br>
+                        II. Cuando el último survivor colgado, tenga cuelgues restantes y no haya otro survivor que
+                        pueda rescatarlo.
+                    </p>
+                    3. Se considerarán cuelgues perfectos cuando el killer realice los 3 cuelgues a cada survivor (sin
+                    caer en los supuestos I y II).
+                    <br>
+                    4. No se considerará cuelgue efectivo: si el survivor muere desangrado en el suelo.
+                    <br>
+                    5. En lo que respecta a los addons y killers que podrán utilizarse, la normativa correspondiente se
+                    encontrará en el apartado de "REGLAS ESPECIALES".
+                    <br>
+                    6. No podrá repetirse killer.
+                    <br>
+                    7. Los miembros del equipo tendrán que jugar de killer sin repetirse entre ellos por cada ronda,
+                    hasta el reinicio de la vuelta, en un máximo de 3 miembros del equipo. (Ejemplo: juega Pcdios,
+                    después Sykess y por último Marvel -reinicia ronda- ya puede volver a jugar Pcdios, Sykess, etc.,
+                    pero de igual manera sin repetirse).
+                </div>
+            </div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Tier List</h1>
+                <img src="img/dbdtier.png" alt="Tier List Killer USM" class="mx-auto">
+            </div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Reglas especiales</h1>
+                <table class="border-collapse border-2 border-slate-500 mx-auto">
+                    <tr>
+                        <td rowspan="2" class="text-4xl px-4 border-b-2 border-r-2 border-slate-500 bg-[#ff7f7f]">S</td>
+                        <td>
+                            <img src="img/killer_headshot/killer_thenurse_headshot.webp" alt="Killer the nurse headshot"
+                                class="w-14 h-14">
+                        </td>
+                        <td>Permitida con 2 addons verdes o inferiores.</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b-2 border-slate-500">
+                            <img src="img/killer_headshot/killer_theblight_headshot.webp"
+                                alt="Killer the blight headshot" class="w-14 h-14">
+                        </td>
+                        <td class="border-b-2 border-slate-500 mx-auto">Permitido con 2 addons verdes o inferiores.</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5" class="text-4xl px-4 border-b-2 border-r-2 border-slate-500 bg-[#ffbf7f]">A</td>
+                        <td>
+                            <img src="img/killer_headshot/killer_theoni_headshot.webp" alt="Killer the oni headshot"
+                                class="w-14 h-14">
+                        </td>
+                        <td>Permitido con 2 addons verdes o inferiores.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_theplague_headshot.webp"
+                                alt="Killer the plague headshot" class="w-14 h-14">
+                        </td>
+                        <td>Permitida con 1 addon morado y otro inferior.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_thetrickster_headshot.webp"
+                                alt="Killer the trickster headshot" class="w-14 h-14">
+                        </td>
+                        <td>Permitido con 1 addon morado y otro inferior.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_thehuntress_headshot.webp"
+                                alt="Killer the huntress headshot" class="w-14 h-14">
+                        </td>
+                        <td>Permitido con 1 addon verde y otro amarillo.</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b-2 border-slate-500">
+                            <img src="img/killer_headshot/killer_thespirit_headshot.webp"
+                                alt="Killer the spirit headshot" class="w-14 h-14">
+                        </td>
+                        <td class="border-b-2 border-slate-500">Permitida con 2 addons verdes o amarillos.</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="6" class="text-4xl px-4 border-b-2 border-r-2 border-slate-500 bg-[#ffdf7f]">B</td>
+                        <td>
+                            <img src="img/killer_headshot/killer_thewraith_headshot.webp"
+                                alt="Killer the wraith headshot" class="w-14 h-14">
+                        </td>
+                        <td>Permitido cualquier addon.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_thedemogorgon_headshot.webp"
+                                alt="Killer the demogorgon headshot" class="w-14 h-14">
+                        </td>
+                        <td>Permitido con cualquier addons.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_thepinhead_headshot.webp"
+                                alt="Killer the pinhead headshot" class="w-14 h-14">
+                        </td>
+                        <td>Permitido con 1 addon morado y otro inferior.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_theartist_headshot.webp"
+                                alt="Killer the artist headshot" class="w-14 h-14">
+                        </td>
+                        <td>Permitida con 2 addons verdes o inferiores.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_thedeathslinger_headshot.webp"
+                                alt="Killer the deathslinger headshot" class="w-14 h-14">
+                        </td>
+                        <td>Permitido con 2 addons verdes o inferiores.</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b-2 border-slate-500">
+                            <img src="img/killer_headshot/killer_thelegion_headshot.webp"
+                                alt="Killer the legion headshot" class="w-14 h-14">
+                        </td>
+                        <td class="border-b-2 border-slate-500">Permitido con 2 addons verdes o inferiores.</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="7" class="text-4xl px-4 border-b-2 border-r-2 border-slate-500 bg-[#ffff7f]">C</td>
+                        <td>
+                            <img src="img/killer_headshot/killer_thehillbilly_headshot.webp"
+                                alt="Killer the hillbilly headshot" class="w-14 h-14">
+                        </td>
+                        <td>Permitido cualquier addon.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_theexecutioner_headshot.webp"
+                                alt="Killer the executioner headshot" class="w-14 h-14">
+                        </td>
+                        <td>Permitido con 2 addons verde o inferiores.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_thecannibal_headshot.webp"
+                                alt="Killer the cannibal headshot" class="w-14 h-14">
+                        </td>
+                        <td>Permitido cualquier addon.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_thenemesis_headshot.webp"
+                                alt="Killer the nemesis headshot" class="w-14 h-14">
+                        </td>
+                        <td>Permitido con cualquier addons.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_thepig_headshot.webp" alt="Killer the pig headshot"
+                                class="w-14 h-14">
+                        </td>
+                        <td>Permitida cualquier addon.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_theclown_headshot.webp" alt="Killer the clown headshot"
+                                class="w-14 h-14">
+                        </td>
+                        <td>Permitido con addons morados o inferiores.</td>
+                    </tr>
+                    <tr>
+                        <td class="border-b-2 border-slate-500">
+                            <img src="img/killer_headshot/killer_theonryo_headshot.webp" alt="Killer the onryo headshot"
+                                class="w-14 h-14">
+                        </td>
+                        <td class="border-b-2 border-slate-500">Permitido con 1 addon morado y otro inferior.</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="7" class="text-4xl px-4 border-b-2 border-r-2 border-slate-500 bg-[#bfff7f]">D</td>
+                        <td>
+                            <img src="img/killer_headshot/killer_thetrapper_headshot.webp"
+                                alt="Killer the trapper headshot" class="w-14 h-14">
+                        </td>
+                        <td> Permitido con 2 addons morados o inferiores. Prohibido Piedra de Afilar.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_theghostface_headshot.webp"
+                                alt="Killer the ghostface headshot" class="w-14 h-14">
+                        </td>
+                        <td>Permitido con addons morados o inferiores.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_theshape_headshot.webp" alt="Killer the shape headshot"
+                                class="w-14 h-14">
+                        </td>
+                        <td>Permitido con addons morado o inferiores. Prohibido Trozo Lapida.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_thedoctor_headshot.webp"
+                                alt="Killer the doctor headshot" class="w-14 h-14">
+                        </td>
+                        <td>Se permite con 2 addons verdes o inferiores.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killler_thehag_headshot.webp" alt="Killer the hag headshot"
+                                class="w-14 h-14">
+                        </td>
+                        <td>Permitido con 2 addons verdes o inferiores.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_thenightmare_headshot.webp"
+                                alt="Killer the nightmare headshot" class="w-14 h-14">
+                        </td>
+                        <td>Permitido cualquier addon.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/killer_headshot/killer_thetwins_headshot.webp" alt="Killer the twins headshot"
+                                class="w-14 h-14">
+                        </td>
+                        <td>Permitido con 2 addons verdes o inferiores.</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Recompensas Fernan sobreviviente</h1>
+                <div class="text-justify leading-loose">
+                    1. Si logran escapar los 4 survivors y, además dos de ellos logran escapar sin cuelgues.
+                    <br>
+                    2. Si en la partida, los survivors consiguen realizar:
+                    <p class="ml-6">
+                        I. Rescate con linterna.
+                        <br>
+                        II. Rescate con perk de agotamiento (De Frente).
+                        <br>
+                        III. Rescate con palé (incluyendo el uso de perks).
+                    </p>
+                    3. Que estando los 4 survivor sluggeados, alguno de ellos consiga levantarse con cualquier perk que
+                    así lo permita (inquebrantable/tótem/me la pela).
+                    <br>
+                    4. Que todos los survivors escapen, y que ninguno de estos haya equipado perks de agotamiento.
+                </div>
+            </div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Recompensas Fernan asesino</h1>
+                <div class="text-justify leading-loose">
+                    1. Hacer 12 cuelgues perfectos, no cuelgues efectivos.
+                    <br>
+                    2. Sluggear a todos los survivors en una ocasión.
+                    <br>
+                    3. Que el asesino realice la acción de "agarre" a un survivor mientras está reparando.
+                    <br>
+                    4. Colgar a los 4 survivors al mismo tiempo en el sótano.
+                    <br>
+                    5. Que los survivors no logren reparar ni un solo motor.
+                    <br>
+                    6. Conseguir el experto (sólo será necesario el uso de las 3 perks base del killer, más el 4k).
+                    <br>
+                    7. Lograr realizar un cuelgue, antes de que se repare un motor, pero sin utilizar la perk
+                    "intervención corrupta".
+                    <br>
+                    8. Realizar un cuelgue a cada survivor antes de que sereparen 3 gens
+                </div>
+            </div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Bonificaciones</h1>
+                <div class="text-justify leading-loose">
+                    1. Escapar los 4 survivors, otorgará 1 punto extra.
+                    <br>
+                    2. Por cada survivor que escape sin cuelgues, se otorgará 1 punto extra.
+                    <br>
+                    3. Escape por trampilla, otorgará 1 punto extra.
+                    <br>
+                    4. Asesinar a los 4 survivors, otorgará 1 punto extra.
+                    <br>
+                    5. Por cada survivor que reciba su primer cuelgue, se otorgará 1 punto extra.
+                    <br>
+                    6. Sacar los 32k puntos de sangre, otorgará 1 punto extra
+                </div>
+            </div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Inscripciones</h1>
+                <div class="text-justify leading-loose">
+                    1. Se podrán inscribir hasta 7 jugadores por equipo, mismos que podrán cambiarse hasta el día 05 de
+                    Julio. Posterior a ello, no se podrá realizar ningún cambio.
+                    <br>
+                    2. Los equipos inscritos deberán mandar su logo, ID y código de juego, código de steam y su devoción
+                    (si eran de consola).
+                </div>
+            </div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Puntajes</h1>
+                <div class="text-justify leading-loose">
+                    El cómputo de puntos se atenderá de acuerdo con el rol que se está desempeñando, de la siguiente
+                    manera:
+                    <div class="ml-6">
+                        I. Survivors:
+                        <p class="ml-6">
+                            a. Motor reparado: 1 punto.
+                            <br>
+                            b. Escape: 1 punto.
+                            <br>
+                            c. Más todas las posibles bonificaciones.
+                        </p>
+                    </div>
+                    <div class="ml-6">
+                        II. Killers:
+                        <p class="ml-6">
+                            a. Motores sin reparar: 1 punto.
+                            <br>
+                            b. Cuelgue efectivo: 1 punto.
+                            <br>
+                            c. Survivor que no logre escapar/Survivor asesinado en gancho/Survivor asesinado con mori: 1
+                            punto.
+                        </p>
+                    </div>
+                    En caso de que exista algún empate, se atenderá a la cantidad de puntos de sangre de la siguiente
+                    manera:
+                    <p class="ml-6">
+                        I. Si el equipo en cuestión estaba jugando de killer, se considerarán los puntos de la premade
+                        USM, y el que haya conseguido que los survivors lograran una menor cantidad de puntos de sangre,
+                        será el ganador del desempate.
+                        <br>
+                        II. Si el equipo en cuestión estaba jugando de survivor, se considerarán los puntos de sangre de
+                        la premade que compite, y el que haya conseguido una mayor cantidad de puntos de sangre, será el
+                        ganador del desempate.
+                        <br>
+                        III. Ambos resultados se tomarán en cuenta y se decidirá a través de los supuestos anteriores,
+                        quién pasa a la siguiente ronda.
+                    </p>
+                </div>
+            </div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Penalizaciones y desconexiones</h1>
+                <div class="text-justify leading-loose">
+                    1. El incumplimiento de cualquiera de las reglas se penalizará con un total de 5 puntos.
+                    <br>
+                    2. Si se detecta que algún equipo está usando ventajas externas o imposibles de realizar con la
+                    mecánica del juego (hacks), se seguirá lo siguiente:
+                    <p class="ml-6">
+                        I. Se realizará una investigación, frente al equipo que se encuentre comprometido en esta
+                        situación, que deberá ser fundada y motivada. Además, se tomará en cuenta la opinión de los
+                        demás capitanes (esto sin perjuicio de que pueda decidirse lo contrario a lo que la mayoría
+                        decida).
+                        <br>
+                        II. Si se prueba que el equipo está usando cualquiera de las ventajas a las que se refiere este
+                        artículo, la penalización será expulsión directa y un veto de cualquier torneo o evento que USM
+                        pueda realizar.
+                    </p>
+                    3. Para el caso de las desconexiones, se observará lo siguiente:
+                    <p class="ml-6">
+                        I. Si la desconexión se realiza antes de que hayan pasado 5 minutos, la partida podrá
+                        reiniciarse, siempre y cuando no se hayan realizado ya 2 cuelgues o reparado 2 motores. No será
+                        penalizable este supuesto, pero se atenderá a los supuestos III y IV para evitar el uso de la
+                        desconexión como parte de una estrategia.
+                        <br>
+                        II. Si la desconexión se hace sin atender los supuestos anteriores, la penalización será de 5
+                        puntos, más lo que se disponga en las siguientes fracciones.
+                        <br>
+                        III. Cuando la desconexión se haya dado por parte de la premade, éstos no podrán cambiar sus
+                        perks, personajes, objetos o addons, sin embargo, el killer podrá cambiar sus perks, addons o en
+                        su defecto el killer.
+                        <br>
+                        IV. Cuando la desconexión se haya dado por parte del killer, éste no podrá cambiar sus perks ni
+                        addons, sin embargo, la premade sí podrá cambiar sus perks, personajes, objetos y addons.
+                        <br>
+                        V. Si la desconexión, en caso de los survivors, se realiza posterior a lo que señala la fracción
+                        I, no será posible el reinicio de partida y se tendrá que jugar con la cantidad de survivors que
+                        quedaron en la partida.
+                        <br>
+                        VI. Si la desconexión, en caso de killers, se realiza posterior a lo que señala la fracción I,
+                        el reinicio de partida se dará, pero contando como puntos extra sólo los puntos que hayan
+                        realizado los survivors.
+                    </p>
+                    4. Todos los equipos tendrán una tolerancia de 10 minutos, superada esa tolerancia y sin
+                    justificación alguna, se les penalizará con 0.5 puntos.
+                </div>
+            </div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Verificación y cuentas admitidas</h1>
+                <div class="text-justify leading-loose">
+                    1. Un miembro de USM (mismo que estará imposibilitado de jugar ese día cualquiera de las rondas),
+                    será el encargado de verificar la identidad y la legalidad de la partida de los equipos, de la
+                    siguiente manera:
+                    <div class="ml-6">
+                        I. Cuando el equipo esté desempeñando el rol de killer, tendrá que jugar en el canal del server
+                        de discord de USM (Una Squad Más y Fernan), mostrará a través de un stream en discord, cada
+                        partida jugada, así como estará en la obligación de mostrar el administrador de tareas y
+                        streamear a partir de ese momento hasta su finalización. La partida deberá jugarse en presencia
+                        del encargado de verificación.
+                        <p class="ml-6">a. Si se trata de un killer que juega en consola, tendrá que enviar un clip
+                            donde logre verse que es el jugador, que se encuentra en el lobby de la partida y que está
+                            jugando en consola.</p>
+                        II. Cuando el equipo esté desempeñando el rol de survivor, tendrán que jugar en el canal del
+                        server de discord de USM (Una Squad Más y Fernan), no podrán silenciarse. La partida deberá
+                        jugarse en presencia del encargado de verificación.
+                    </div>
+                    2. No serán admitidas cuentas que tengan menos de 500 horas, salvo:
+                    <p class="ml-6">
+                        I. Que el jugador demuestre que era jugador de otra plataforma y muestre con una foto de su
+                        devoción anterior que es cierto lo que afirma.
+                        <br>
+                        II. Se trate de jugadores que, por consenso de la comunidad, tienen buena reputación y una
+                        habilidad dentro de lo común o acorde a las horas de juego que tiene.
+                    </p>
+                </div>
+            </div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Reglas para la squad</h1>
+                <div class="text-justify leading-loose">
+                    1. USM no podrá ser acreedor de bonificaciones ni recompensas "FERNAN", aunque logre los requisitos
+                    necesarios para obtenerlos.
+                    <br>
+                    2. Las reglas que rigen el comportamiento de survivors, serán todas aplicables.
+                    <br>
+                    3. Las reglas que rigen el comportamiento de killers, serán todas aplicables, salvo:
+                    <p class="ml-6">
+                        I. La regla que impide que se pueda repetir killers (regla 6).
+                        <br>
+                        II. La regla que obliga a los jugadores a intercalarse entre ellos sin repetirse al momento de
+                        jugar cada partida. La forma en que han de regirse los turnos para jugar de killer, será
+                        totalmente a discreción del equipo USM (regla 7).
+                    </p>
+                    4. A pesar de que el supuesto anterior menciona que USM podrá repetir killer, esto hace referencia a
+                    que podrá jugar el mismo killer con diferentes equipos, pero no podrá jugar el mismo killer contra
+                    una misma premande. Para evitar cualquier confusión, las partidas serán espejo.
+                    <br>
+                    5. En caso de que USM caiga en cualquier comportamiento penalizable, el equipo que haya tenido un
+                    perjuicio debido al incumplimiento de esa norma tendrá 1 punto extra, si a ojos del juzgador, sí
+                    implicó un menoscabo en el desarrollo de su partida.
+                    <br>
+                    6. El survivor o killer de USM que caiga en cualquier comportamiento penalizable, cargará con el
+                    título "Mascota de la Squad"
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

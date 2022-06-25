@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una Squad Más</title>
+    <link rel="stylesheet" href="dist/output.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia(
+                '(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+</head>
+
+<body class="bg-white dark:bg-slate-900 antialiased text-slate-500 dark:text-slate-400">
+    <div class="sticky top-0 backdrop-blur max-w-7xl xl:m-auto sm:px-8">
+        <div class="mx-auto px-4 sm:px-6">
+            <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+                <div class="flex justify-start sm:w-0 sm:flex-1">
+                    <a href="">
+                        <img class="h-8 w-auto sm:h-10" src="img/usm.webp" alt="">
+                    </a>
+                </div>
+                <h1 class="mx-auto text-2xl font-bold">2 Premades 1 Cup</h1>
+                <div x-data="{open: false}" class="hidden sm:flex items-center justify-end sm:flex-1 sm:w-0">
+                    <button type="button" @click="open=!open">
+                        <span class="dark:hidden">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-6 h-6">
+                                <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" class="fill-sky-400/20 stroke-sky-500">
+                                </path>
+                                <path
+                                    d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
+                                    class="stroke-sky-500"></path>
+                            </svg>
+                        </span>
+                        <span class="hidden dark:inline">
+                            <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"
+                                    class="fill-sky-400/20"></path>
+                                <path
+                                    d="m17.715 15.15.95.316a1 1 0 0 0-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 0 0-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 0 1-2.72.718v2a7.47 7.47 0 0 0 3.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 0 1 9 9.5H7a7.5 7.5 0 0 0 7.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 0 0 7 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z"
+                                    class="fill-sky-500"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M17 3a1 1 0 0 1 1 1 2 2 0 0 0 2 2 1 1 0 1 1 0 2 2 2 0 0 0-2 2 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 1 1 0-2 2 2 0 0 0 2-2 1 1 0 0 1 1-1Z"
+                                    class="fill-sky-500"></path>
+                            </svg>
+                        </span>
+                    </button>
+                    <ul x-show="open" @click.outside="open=false"
+                        class="absolute z-50 top-full right-0 bg-white rounded-lg ring-1 ring-slate-900/10 shadow-lg overflow-hidden w-36 py-1 text-sm text-slate-700 font-semibold dark:bg-slate-800 dark:ring-0 dark:highlight-white/5 dark:text-slate-300">
+                        <li id="theme-light" @click="changeTheme('light');open=!open"
+                            class="py-1 px-2 flex items-center cursor-pointer">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-6 h-6 mr-2">
+                                <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                    class="stroke-slate-400 dark:stroke-slate-500"></path>
+                                <path
+                                    d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
+                                    class="stroke-slate-400 dark:stroke-slate-500"></path>
+                            </svg>
+                            Claro
+                        </li>
+                        <li id="theme-dark" @click="changeTheme('dark');open=!open"
+                            class="py-1 px-2 flex items-center cursor-pointer">
+                            <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 mr-2">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"
+                                    class="fill-transparent"></path>
+                                <path
+                                    d="m17.715 15.15.95.316a1 1 0 0 0-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 0 0-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 0 1-2.72.718v2a7.47 7.47 0 0 0 3.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 0 1 9 9.5H7a7.5 7.5 0 0 0 7.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 0 0 7 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z"
+                                    class="fill-slate-400 dark:fill-slate-500"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M17 3a1 1 0 0 1 1 1 2 2 0 0 0 2 2 1 1 0 1 1 0 2 2 2 0 0 0-2 2 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 1 1 0-2 2 2 0 0 0 2-2 1 1 0 0 1 1-1Z"
+                                    class="fill-slate-400 dark:fill-slate-500"></path>
+                            </svg>
+                            Oscuro
+                        </li>
+                        <li id="theme-system" @click="changeTheme('system');open=!open"
+                            class="py-1 px-2 flex items-center cursor-pointer">
+                            <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 mr-2">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z"
+                                    stroke-width="2" stroke-linejoin="round"
+                                    class="stroke-slate-400 dark:stroke-slate-500"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M14 15c0 3 2 5 2 5H8s2-2 2-5"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="stroke-slate-400 dark:stroke-slate-500"></path>
+                            </svg>
+                            Sistema
+                        </li>
+                    </ul>
+                    <script>
+                        function menuThemeLight() {
+                            document.getElementById('theme-light').children[0].children[0].classList.remove(
+                                'stroke-slate-400');
+                            document.getElementById('theme-light').children[0].children[0].classList.remove(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-light').children[0].children[1].classList.remove(
+                                'stroke-slate-400');
+                            document.getElementById('theme-light').children[0].children[1].classList.remove(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-light').children[0].children[0].classList.add(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-light').children[0].children[0].classList.add(
+                                'stroke-sky-500');
+                            document.getElementById('theme-light').children[0].children[1].classList.add(
+                                'stroke-sky-500');
+                            document.getElementById("theme-light").classList.add("text-sky-500");
+
+                            document.getElementById('theme-dark').children[0].children[0].classList.remove(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
+                                'fill-sky-500');
+                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
+                                'fill-sky-500');
+                            document.getElementById('theme-dark').children[0].children[0].classList.add(
+                                'fill-transparent');
+                            document.getElementById('theme-dark').children[0].children[1].classList.add(
+                                'fill-slate-400');
+                            document.getElementById('theme-dark').children[0].children[1].classList.add(
+                                'dark:fill-slate-500');
+                            document.getElementById('theme-dark').children[0].children[2].classList.add(
+                                'fill-slate-400');
+                            document.getElementById('theme-dark').children[0].children[2].classList.add(
+                                'dark:fill-slate-500');
+                            document.getElementById("theme-dark").classList.remove("text-sky-500");
+
+                            document.getElementById('theme-system').children[0].children[0].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById('theme-system').children[0].children[0].classList.remove(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-system').children[0].children[1].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById('theme-system').children[0].children[0].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-system').children[0].children[0].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-system').children[0].children[1].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-system').children[0].children[1].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById("theme-system").classList.remove("text-sky-500");
+
+                            localStorage.theme = 'light';
+                            document.documentElement.classList.remove('dark');
+                        }
+
+                        function menuThemeDark() {
+                            document.getElementById('theme-dark').children[0].children[0].classList.remove(
+                                'fill-transparent');
+                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
+                                'fill-slate-400');
+                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
+                                'dark:fill-slate-500');
+                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
+                                'fill-slate-400');
+                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
+                                'dark:fill-slate-500');
+                            document.getElementById('theme-dark').children[0].children[0].classList.add(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-dark').children[0].children[1].classList.add(
+                                'fill-sky-500');
+                            document.getElementById('theme-dark').children[0].children[2].classList.add(
+                                'fill-sky-500');
+                            document.getElementById("theme-dark").classList.add("text-sky-500");
+
+                            document.getElementById('theme-light').children[0].children[0].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-light').children[0].children[0].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-light').children[0].children[1].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-light').children[0].children[1].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-light').children[0].children[0].classList.remove(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-light').children[0].children[0].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById('theme-light').children[0].children[1].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById("theme-light").classList.remove("text-sky-500");
+
+                            document.getElementById('theme-system').children[0].children[0].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-system').children[0].children[0].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-system').children[0].children[1].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-system').children[0].children[1].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-system').children[0].children[0].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById('theme-system').children[0].children[0].classList.remove(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-system').children[0].children[1].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById("theme-system").classList.remove("text-sky-500");
+                        }
+
+                        function menuThemeSystem() {
+                            document.getElementById('theme-system').children[0].children[0].classList.remove(
+                                'stroke-slate-400');
+                            document.getElementById('theme-system').children[0].children[0].classList.remove(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-system').children[0].children[1].classList.remove(
+                                'stroke-slate-400');
+                            document.getElementById('theme-system').children[0].children[1].classList.remove(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-system').children[0].children[0].classList.add(
+                                'stroke-sky-500');
+                            document.getElementById('theme-system').children[0].children[0].classList.add(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-system').children[0].children[1].classList.add(
+                                'stroke-sky-500');
+                            document.getElementById("theme-system").classList.add("text-sky-500");
+
+                            document.getElementById('theme-light').children[0].children[0].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-light').children[0].children[0].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-light').children[0].children[1].classList.add(
+                                'stroke-slate-400');
+                            document.getElementById('theme-light').children[0].children[1].classList.add(
+                                'dark:stroke-slate-500');
+                            document.getElementById('theme-light').children[0].children[0].classList.remove(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-light').children[0].children[0].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById('theme-light').children[0].children[1].classList.remove(
+                                'stroke-sky-500');
+                            document.getElementById("theme-light").classList.remove("text-sky-500");
+
+                            document.getElementById('theme-dark').children[0].children[0].classList.remove(
+                                'fill-sky-400/20');
+                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
+                                'fill-sky-500');
+                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
+                                'fill-sky-500');
+                            document.getElementById('theme-dark').children[0].children[0].classList.add(
+                                'fill-transparent');
+                            document.getElementById('theme-dark').children[0].children[1].classList.add(
+                                'fill-slate-400');
+                            document.getElementById('theme-dark').children[0].children[1].classList.add(
+                                'dark:fill-slate-500');
+                            document.getElementById('theme-dark').children[0].children[2].classList.add(
+                                'fill-slate-400');
+                            document.getElementById('theme-dark').children[0].children[2].classList.add(
+                                'dark:fill-slate-500');
+                            document.getElementById("theme-dark").classList.remove("text-sky-500");
+                        }
+
+                        if (localStorage.theme === 'light') {
+                            menuThemeLight();
+                        } else if (localStorage.theme === 'dark') {
+                            menuThemeDark();
+                        } else {
+                            menuThemeSystem();
+                        }
+
+                        function changeTheme(theme) {
+                            if (theme === 'light') {
+                                menuThemeLight();
+                                localStorage.theme = 'light';
+                                document.documentElement.classList.remove('dark');
+                            } else if (theme === 'dark') {
+                                menuThemeDark();
+                                localStorage.theme = 'dark';
+                                document.documentElement.classList.add('dark');
+                            } else if (theme === 'system') {
+                                menuThemeSystem();
+                                localStorage.removeItem('theme');
+                                if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                                    document.documentElement.classList.add('dark');
+                                } else {
+                                    document.documentElement.classList.remove('dark');
+                                }
+                            }
+                        }
+                    </script>
+                    <a href="https://www.facebook.com/profile.php?id=100046955563453" target="_blank"
+                        rel="noopener noreferrer"
+                        class="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300">
+                        <span class="sr-only">Facebook USM</span>
+                        <svg viewBox="0 0 16 16" class="w-5 h-5" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.twitch.tv/unasquadmas" target="_blank" rel="noopener noreferrer"
+                        class="ml-6 block text-slate-400 hover:text-slate-500 dark:hover:text-slate-300">
+                        <span class="sr-only">Twitch USM</span>
+                        <svg viewBox="0 0 16 16" class="w-5 h-5" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M3.857 0 1 2.857v10.286h3.429V16l2.857-2.857H9.57L14.714 8V0H3.857zm9.714 7.429-2.285 2.285H9l-2 2v-2H4.429V1.143h9.142v6.286z" />
+                            <path d="M11.857 3.143h-1.143V6.57h1.143V3.143zm-3.143 0H7.571V6.57h1.143V3.143z" />
+                        </svg>
+                    </a>
+                </div>
+                <div x-data="{open: false}" class="ml-2 -my-1 sm:hidden">
+                    <button type="button" @click="open=!open"
+                        class="text-slate-500 w-8 h-8 flex items-center justify-center hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
+                        <span class="sr-only">Navigation</span>
+                        <svg width="24" height="24" fill="none" aria-hidden="true">
+                            <path
+                                d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"
+                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                        </svg>
+                    </button>
+                    <div x-show="open" @click.outside="open=false"
+                        class="fixed top-4 right-4 w-full max-w-xs bg-white rounded-lg shadow-lg p-6 text-base font-semibold text-slate-900 dark:bg-slate-800 dark:text-slate-400 dark:highlight-white/5">
+                        <button type="button" @click="open=!open"
+                            class="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-slate-500 hover:text-slate-600 dark:text-slate-400 dark:hover:text-slate-300">
+                            <span class="sr-only">Close navigation</span>
+                            <svg viewBox="0 0 10 10" class="w-2.5 h-2.5 overflow-visible" aria-hidden="true">
+                                <path d="M0 0L10 10M10 0L0 10" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round"></path>
+                            </svg>
+                        </button>
+                        <ul class="space-y-6">
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=100046955563453" target="_blank"
+                                    rel="noopener noreferrer" class="hover:text-sky-500 dark:hover:text-sky-400">
+                                    Facebook
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.twitch.tv/unasquadmas" target="_blank" rel="noopener noreferrer"
+                                    class="hover:text-sky-500 dark:hover:text-sky-400">
+                                    Twitch
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="mt-6 pt-6 border-t border-slate-200 dark:border-slate-200/10">
+                            <div class="flex items-center justify-between">
+                                <label for="theme" class="text-slate-700 font-normal dark:text-slate-400">
+                                    Cambiar tema
+                                </label>
+                                <div
+                                    class="relative flex items-center ring-1 ring-slate-900/10 rounded-lg shadow-sm p-2 text-slate-700 font-semibold dark:bg-slate-600 dark:ring-0 dark:highlight-white/5 dark:text-slate-200">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="w-6 h-6 mr-2 dark:hidden">
+                                        <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                            class="stroke-slate-400 dark:stroke-slate-500"></path>
+                                        <path
+                                            d="M12 4v1M17.66 6.344l-.828.828M20.005 12.004h-1M17.66 17.664l-.828-.828M12 20.01V19M6.34 17.664l.835-.836M3.995 12.004h1.01M6 6l.835.836"
+                                            class="stroke-slate-400 dark:stroke-slate-500"></path>
+                                    </svg>
+                                    <svg viewBox="0 0 24 24" fill="none" class="w-6 h-6 mr-2 hidden dark:block">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M17.715 15.15A6.5 6.5 0 0 1 9 6.035C6.106 6.922 4 9.645 4 12.867c0 3.94 3.153 7.136 7.042 7.136 3.101 0 5.734-2.032 6.673-4.853Z"
+                                            class="fill-transparent"></path>
+                                        <path
+                                            d="m17.715 15.15.95.316a1 1 0 0 0-1.445-1.185l.495.869ZM9 6.035l.846.534a1 1 0 0 0-1.14-1.49L9 6.035Zm8.221 8.246a5.47 5.47 0 0 1-2.72.718v2a7.47 7.47 0 0 0 3.71-.98l-.99-1.738Zm-2.72.718A5.5 5.5 0 0 1 9 9.5H7a7.5 7.5 0 0 0 7.5 7.5v-2ZM9 9.5c0-1.079.31-2.082.845-2.93L8.153 5.5A7.47 7.47 0 0 0 7 9.5h2Zm-4 3.368C5 10.089 6.815 7.75 9.292 6.99L8.706 5.08C5.397 6.094 3 9.201 3 12.867h2Zm6.042 6.136C7.718 19.003 5 16.268 5 12.867H3c0 4.48 3.588 8.136 8.042 8.136v-2Zm5.725-4.17c-.81 2.433-3.074 4.17-5.725 4.17v2c3.552 0 6.553-2.327 7.622-5.537l-1.897-.632Z"
+                                            class="fill-slate-400"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M17 3a1 1 0 0 1 1 1 2 2 0 0 0 2 2 1 1 0 1 1 0 2 2 2 0 0 0-2 2 1 1 0 1 1-2 0 2 2 0 0 0-2-2 1 1 0 1 1 0-2 2 2 0 0 0 2-2 1 1 0 0 1 1-1Z"
+                                            class="fill-slate-400"></path>
+                                    </svg>
+                                    <label id="label-theme-selected-mobile"></label>
+                                    <svg class="w-6 h-6 ml-2 text-slate-400" fill="none">
+                                        <path d="m15 11-3 3-3-3" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                    <select id="theme-mobile" @change="changeThemeMobile;open=!open"
+                                        class="absolute appearance-none inset-0 w-full h-full opacity-0">
+                                        <option value="light">Claro</option>
+                                        <option value="dark">Oscuro</option>
+                                        <option value="system">Sistema</option>
+                                    </select>
+                                    <script>
+                                        var select = document.getElementById('theme-mobile');
+
+                                        if (localStorage.theme === 'light') {
+                                            select.value = 'light';
+                                        } else if (localStorage.theme === 'dark') {
+                                            select.value = 'dark';
+                                        } else {
+                                            select.value = 'system';
+                                        }
+
+                                        var text = select.options[select.selectedIndex].text;
+                                        document.getElementById('label-theme-selected-mobile').innerHTML = text;
+
+                                        function changeThemeMobile() {
+                                            var select = document.getElementById('theme-mobile');
+                                            var text = select.options[select.selectedIndex].text;
+                                            var value = select.options[select.selectedIndex].value;
+                                            document.getElementById('label-theme-selected-mobile').innerHTML = text;
+
+                                            if (value === 'light') {
+                                                localStorage.theme = 'light';
+                                                document.documentElement.classList.remove('dark');
+                                            } else if (value === 'dark') {
+                                                localStorage.theme = 'dark';
+                                                document.documentElement.classList.add('dark');
+                                            } else if (value === 'system') {
+                                                localStorage.removeItem('theme');
+                                                if (window.matchMedia('(prefers-color-scheme: dark)')) {
+                                                    document.documentElement.classList.add('dark');
+                                                } else {
+                                                    document.documentElement.classList.remove('dark');
+                                                }
+                                            }
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl xl:m-auto sm:px-8 px-5">
+        <div class="text-justify sm:text-center pt-2 pb-4 2xl:px-72 xl:px-60">
+            ¡Gracias!, formas parte de la primera edición de 2 PREMADES 1 CUP, eso quiere decir que te follarás a USM en
+            reiteradas ocasiones. Agradecemos infinitamente tu compromiso, esperamos las reglas sean sencillas y si no
+            lo son, una disculpa, lo redactó la Lic. Añañin (Mery_Bros) y es medio mamadora, así que haz tantas
+            preguntas como desees. Sin más que decir, esperamos que disfrutes este torneo.
+            <br>
+            Sykess se la come y Fernan será expulsado después de que leas las reglas. Te quiere:
+            <br>
+            Una Squad Más ❤️.
+        </div>
+
+        <div
+            class="text-sm font-medium text-center text-gray-500 border-b border-gray-200 dark:text-gray-400 dark:border-gray-700 mb-5">
+            <ul class="flex flex-wrap -mb-px">
+                <li class="mr-2">
+                    <a href="index.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Torneo
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="overview.html" aria-current="page"
+                        class="inline-block p-4 text-blue-600 rounded-t-lg border-b-2 border-blue-600 active dark:text-blue-500 dark:border-blue-500">
+                        Overview
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="darslai.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Fase Dars Lai
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="monstercrazy.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Fase Monster Crazy
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="sash.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Fase Sash
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="pcdios.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Fase PCDios
+                    </a>
+                </li>
+                <li class="mr-2">
+                    <a href="final.html"
+                        class="inline-block p-4 rounded-t-lg border-b-2 border-transparent hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300">
+                        Fase Final
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Casters</h1>
+                <div class="text-justify leading-loose">
+                    VJ y Chef
+                </div>
+            </div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Formato</h1>
+                <div class="text-justify leading-loose">
+                    <p class="text-lg font-semibold">Fase Dars Lai</p>
+                    <p class="text-lg font-semibold">Fase Monstercrazy</p>
+                    <p class="text-lg font-semibold">Fase Sash</p>
+                    <p class="text-lg font-semibold">Fase PCDios</p>
+                    <p class="text-lg font-semibold">Fase Final</p>
+                </div>
+            </div>
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Equipos</h1>
+                <div>
+                    qwe
+                </div>
+            </div>
+            <div class="mb-5" x-data="{ results: [] }" x-init="fetch('https://carlosriveraf.github.io/resultados.json')
+                .then(response => response.json())
+                .then(data => results = data);">
+                <h1 class="text-2xl pb-2">Resultados</h1>
+                <div class="overflow-x-auto">
+                    <div class="py-2 align-middle inline-block">
+                        <table class="text-center">
+                            <thead class="">
+                                <tr>
+                                    <th scope="col" rowspan="2" class="px-4 border border-slate-500">#</th>
+                                    <th scope="col" rowspan="2" class="px-4 border border-slate-500">Equipo</th>
+                                    <th scope="col" rowspan="2" class="px-4 border border-slate-500">Matches</th>
+                                    <th scope="col" colspan="3" class="px-4 border border-slate-500 py-1">Puntuación</th>
+                                </tr>
+                                <tr>
+                                    <th scope="col" class="px-2 border border-slate-500 py-1">Asesino</th>
+                                    <th scope="col" class="px-2 border border-slate-500 py-1">Sobreviviente</th>
+                                    <th scope="col" class="px-2 border border-slate-500 py-1">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="">
+                                <template x-for="result in results" :key="result.id">
+                                    <tr>
+                                        <td x-text="result.id" class="px-4 py-2 border border-slate-500"></td>
+                                        <td x-text="result.team" class="text-left px-4 py-2 border border-slate-500 whitespace-nowrap"></td>
+                                        <td x-text="result.matches" class="px-4 py-2 border border-slate-500"></td>
+                                        <td x-text="result.killerpoints" class="px-4 py-2 border border-slate-500"></td>
+                                        <td x-text="result.survivorpoints" class="px-4 py-2 border border-slate-500"></td>
+                                        <td x-text="result.killerpoints+result.survivorpoints" class="px-4 py-2 border border-slate-500"></td>
+                                    </tr>
+                                </template>
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <h1 class="text-2xl pb-2">Jugadores</h1>
+                <div>
+                    qwe
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
