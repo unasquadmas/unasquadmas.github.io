@@ -505,7 +505,7 @@
                     qwe
                 </div>
             </div>
-            <div class="mb-5" x-data="{ results: [] }" x-init="fetch('https://carlosriveraf.github.io/resultados.json')
+            <div class="mb-5" x-data="{ results: [] }" x-init="fetch('https://unasquadmas.github.io/resultados.json')
                 .then(response => response.json())
                 .then(data => results = data);">
                 <h1 class="text-2xl pb-2">Resultados</h1>
@@ -517,7 +517,9 @@
                                     <th scope="col" rowspan="2" class="px-4 border border-slate-500">#</th>
                                     <th scope="col" rowspan="2" class="px-4 border border-slate-500">Equipo</th>
                                     <th scope="col" rowspan="2" class="px-4 border border-slate-500">Matches</th>
-                                    <th scope="col" colspan="3" class="px-4 border border-slate-500 py-1">Puntuación</th>
+                                    <th scope="col" colspan="3" class="px-4 border border-slate-500 py-1">
+                                        Puntuación
+                                    </th>
                                 </tr>
                                 <tr>
                                     <th scope="col" class="px-2 border border-slate-500 py-1">Asesino</th>
@@ -529,11 +531,14 @@
                                 <template x-for="result in results" :key="result.id">
                                     <tr>
                                         <td x-text="result.id" class="px-4 py-2 border border-slate-500"></td>
-                                        <td x-text="result.team" class="text-left px-4 py-2 border border-slate-500 whitespace-nowrap"></td>
+                                        <td x-text="result.team"
+                                            class="text-left px-4 py-2 border border-slate-500 whitespace-nowrap"></td>
                                         <td x-text="result.matches" class="px-4 py-2 border border-slate-500"></td>
                                         <td x-text="result.killerpoints" class="px-4 py-2 border border-slate-500"></td>
-                                        <td x-text="result.survivorpoints" class="px-4 py-2 border border-slate-500"></td>
-                                        <td x-text="result.killerpoints+result.survivorpoints" class="px-4 py-2 border border-slate-500"></td>
+                                        <td x-text="result.survivorpoints" class="px-4 py-2 border border-slate-500">
+                                        </td>
+                                        <td x-text="result.killerpoints+result.survivorpoints"
+                                            class="px-4 py-2 border border-slate-500"></td>
                                     </tr>
                                 </template>
                             </tbody>
