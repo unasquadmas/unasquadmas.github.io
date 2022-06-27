@@ -99,162 +99,102 @@
                     </ul>
                     <script>
                         function menuThemeLight() {
-                            document.getElementById('theme-light').children[0].children[0].classList.remove(
-                                'stroke-slate-400');
-                            document.getElementById('theme-light').children[0].children[0].classList.remove(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-light').children[0].children[1].classList.remove(
-                                'stroke-slate-400');
-                            document.getElementById('theme-light').children[0].children[1].classList.remove(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-light').children[0].children[0].classList.add(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-light').children[0].children[0].classList.add(
-                                'stroke-sky-500');
-                            document.getElementById('theme-light').children[0].children[1].classList.add(
-                                'stroke-sky-500');
-                            document.getElementById("theme-light").classList.add("text-sky-500");
+                            let themelight = document.getElementById('theme-light');
+                            themelight.children[0].children[0].classList.remove('stroke-slate-400');
+                            themelight.children[0].children[0].classList.remove('dark:stroke-slate-500');
+                            themelight.children[0].children[1].classList.remove('stroke-slate-400');
+                            themelight.children[0].children[1].classList.remove('dark:stroke-slate-500');
+                            themelight.children[0].children[0].classList.add('fill-sky-400/20');
+                            themelight.children[0].children[0].classList.add('stroke-sky-500');
+                            themelight.children[0].children[1].classList.add('stroke-sky-500');
+                            themelight.classList.add('text-sky-500');
 
-                            document.getElementById('theme-dark').children[0].children[0].classList.remove(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
-                                'fill-sky-500');
-                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
-                                'fill-sky-500');
-                            document.getElementById('theme-dark').children[0].children[0].classList.add(
-                                'fill-transparent');
-                            document.getElementById('theme-dark').children[0].children[1].classList.add(
-                                'fill-slate-400');
-                            document.getElementById('theme-dark').children[0].children[1].classList.add(
-                                'dark:fill-slate-500');
-                            document.getElementById('theme-dark').children[0].children[2].classList.add(
-                                'fill-slate-400');
-                            document.getElementById('theme-dark').children[0].children[2].classList.add(
-                                'dark:fill-slate-500');
-                            document.getElementById("theme-dark").classList.remove("text-sky-500");
+                            let themedark = document.getElementById('theme-dark');
+                            themedark.children[0].children[0].classList.remove('fill-sky-400/20');
+                            themedark.children[0].children[1].classList.remove('fill-sky-500');
+                            themedark.children[0].children[2].classList.remove('fill-sky-500');
+                            themedark.children[0].children[0].classList.add('fill-transparent');
+                            themedark.children[0].children[1].classList.add('fill-slate-400');
+                            themedark.children[0].children[1].classList.add('dark:fill-slate-500');
+                            themedark.children[0].children[2].classList.add('fill-slate-400');
+                            themedark.children[0].children[2].classList.add('dark:fill-slate-500');
+                            themedark.classList.remove('text-sky-500');
 
-                            document.getElementById('theme-system').children[0].children[0].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById('theme-system').children[0].children[0].classList.remove(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-system').children[0].children[1].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById('theme-system').children[0].children[0].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-system').children[0].children[0].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-system').children[0].children[1].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-system').children[0].children[1].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById("theme-system").classList.remove("text-sky-500");
-
-                            localStorage.theme = 'light';
-                            document.documentElement.classList.remove('dark');
+                            let themesystem = document.getElementById('theme-system');
+                            themesystem.children[0].children[0].classList.remove('stroke-sky-500');
+                            themesystem.children[0].children[0].classList.remove('fill-sky-400/20');
+                            themesystem.children[0].children[1].classList.remove('stroke-sky-500');
+                            themesystem.children[0].children[0].classList.add('stroke-slate-400');
+                            themesystem.children[0].children[0].classList.add('dark:stroke-slate-500');
+                            themesystem.children[0].children[1].classList.add('stroke-slate-400');
+                            themesystem.children[0].children[1].classList.add('dark:stroke-slate-500');
+                            themesystem.classList.remove('text-sky-500');
                         }
 
                         function menuThemeDark() {
-                            document.getElementById('theme-dark').children[0].children[0].classList.remove(
-                                'fill-transparent');
-                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
-                                'fill-slate-400');
-                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
-                                'dark:fill-slate-500');
-                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
-                                'fill-slate-400');
-                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
-                                'dark:fill-slate-500');
-                            document.getElementById('theme-dark').children[0].children[0].classList.add(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-dark').children[0].children[1].classList.add(
-                                'fill-sky-500');
-                            document.getElementById('theme-dark').children[0].children[2].classList.add(
-                                'fill-sky-500');
-                            document.getElementById("theme-dark").classList.add("text-sky-500");
+                            let themedark = document.getElementById('theme-dark');
+                            themedark.children[0].children[0].classList.remove('fill-transparent');
+                            themedark.children[0].children[1].classList.remove('fill-slate-400');
+                            themedark.children[0].children[1].classList.remove('dark:fill-slate-500');
+                            themedark.children[0].children[2].classList.remove('fill-slate-400');
+                            themedark.children[0].children[2].classList.remove('dark:fill-slate-500');
+                            themedark.children[0].children[0].classList.add('fill-sky-400/20');
+                            themedark.children[0].children[1].classList.add('fill-sky-500');
+                            themedark.children[0].children[2].classList.add('fill-sky-500');
+                            themedark.classList.add('text-sky-500');
 
-                            document.getElementById('theme-light').children[0].children[0].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-light').children[0].children[0].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-light').children[0].children[1].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-light').children[0].children[1].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-light').children[0].children[0].classList.remove(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-light').children[0].children[0].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById('theme-light').children[0].children[1].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById("theme-light").classList.remove("text-sky-500");
+                            let themelight = document.getElementById('theme-light');
+                            themelight.children[0].children[0].classList.add('stroke-slate-400');
+                            themelight.children[0].children[0].classList.add('dark:stroke-slate-500');
+                            themelight.children[0].children[1].classList.add('stroke-slate-400');
+                            themelight.children[0].children[1].classList.add('dark:stroke-slate-500');
+                            themelight.children[0].children[0].classList.remove('fill-sky-400/20');
+                            themelight.children[0].children[0].classList.remove('stroke-sky-500');
+                            themelight.children[0].children[1].classList.remove('stroke-sky-500');
+                            themelight.classList.remove('text-sky-500');
 
-                            document.getElementById('theme-system').children[0].children[0].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-system').children[0].children[0].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-system').children[0].children[1].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-system').children[0].children[1].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-system').children[0].children[0].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById('theme-system').children[0].children[0].classList.remove(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-system').children[0].children[1].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById("theme-system").classList.remove("text-sky-500");
+                            let themesystem = document.getElementById('theme-system');
+                            themesystem.children[0].children[0].classList.add('stroke-slate-400');
+                            themesystem.children[0].children[0].classList.add('dark:stroke-slate-500');
+                            themesystem.children[0].children[1].classList.add('stroke-slate-400');
+                            themesystem.children[0].children[1].classList.add('dark:stroke-slate-500');
+                            themesystem.children[0].children[0].classList.remove('stroke-sky-500');
+                            themesystem.children[0].children[0].classList.remove('fill-sky-400/20');
+                            themesystem.children[0].children[1].classList.remove('stroke-sky-500');
+                            themesystem.classList.remove('text-sky-500');
                         }
 
                         function menuThemeSystem() {
-                            document.getElementById('theme-system').children[0].children[0].classList.remove(
-                                'stroke-slate-400');
-                            document.getElementById('theme-system').children[0].children[0].classList.remove(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-system').children[0].children[1].classList.remove(
-                                'stroke-slate-400');
-                            document.getElementById('theme-system').children[0].children[1].classList.remove(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-system').children[0].children[0].classList.add(
-                                'stroke-sky-500');
-                            document.getElementById('theme-system').children[0].children[0].classList.add(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-system').children[0].children[1].classList.add(
-                                'stroke-sky-500');
-                            document.getElementById("theme-system").classList.add("text-sky-500");
+                            let themesystem = document.getElementById('theme-system');
+                            themesystem.children[0].children[0].classList.remove('stroke-slate-400');
+                            themesystem.children[0].children[0].classList.remove('dark:stroke-slate-500');
+                            themesystem.children[0].children[1].classList.remove('stroke-slate-400');
+                            themesystem.children[0].children[1].classList.remove('dark:stroke-slate-500');
+                            themesystem.children[0].children[0].classList.add('stroke-sky-500');
+                            themesystem.children[0].children[0].classList.add('fill-sky-400/20');
+                            themesystem.children[0].children[1].classList.add('stroke-sky-500');
+                            themesystem.classList.add('text-sky-500');
 
-                            document.getElementById('theme-light').children[0].children[0].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-light').children[0].children[0].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-light').children[0].children[1].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-light').children[0].children[1].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-light').children[0].children[0].classList.remove(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-light').children[0].children[0].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById('theme-light').children[0].children[1].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById("theme-light").classList.remove("text-sky-500");
+                            let themelight = document.getElementById('theme-light');
+                            themelight.children[0].children[0].classList.add('stroke-slate-400');
+                            themelight.children[0].children[0].classList.add('dark:stroke-slate-500');
+                            themelight.children[0].children[1].classList.add('stroke-slate-400');
+                            themelight.children[0].children[1].classList.add('dark:stroke-slate-500');
+                            themelight.children[0].children[0].classList.remove('fill-sky-400/20');
+                            themelight.children[0].children[0].classList.remove('stroke-sky-500');
+                            themelight.children[0].children[1].classList.remove('stroke-sky-500');
+                            themelight.classList.remove('text-sky-500');
 
-                            document.getElementById('theme-dark').children[0].children[0].classList.remove(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
-                                'fill-sky-500');
-                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
-                                'fill-sky-500');
-                            document.getElementById('theme-dark').children[0].children[0].classList.add(
-                                'fill-transparent');
-                            document.getElementById('theme-dark').children[0].children[1].classList.add(
-                                'fill-slate-400');
-                            document.getElementById('theme-dark').children[0].children[1].classList.add(
-                                'dark:fill-slate-500');
-                            document.getElementById('theme-dark').children[0].children[2].classList.add(
-                                'fill-slate-400');
-                            document.getElementById('theme-dark').children[0].children[2].classList.add(
-                                'dark:fill-slate-500');
-                            document.getElementById("theme-dark").classList.remove("text-sky-500");
+                            let themedark = document.getElementById('theme-dark');
+                            themedark.children[0].children[0].classList.remove('fill-sky-400/20');
+                            themedark.children[0].children[1].classList.remove('fill-sky-500');
+                            themedark.children[0].children[2].classList.remove('fill-sky-500');
+                            themedark.children[0].children[0].classList.add('fill-transparent');
+                            themedark.children[0].children[1].classList.add('fill-slate-400');
+                            themedark.children[0].children[1].classList.add('dark:fill-slate-500');
+                            themedark.children[0].children[2].classList.add('fill-slate-400');
+                            themedark.children[0].children[2].classList.add('dark:fill-slate-500');
+                            themedark.classList.remove('text-sky-500');
                         }
 
                         if (localStorage.theme === 'light') {
@@ -492,11 +432,71 @@
             <div class="mb-5">
                 <h1 class="text-2xl pb-2">Formato</h1>
                 <div class="text-justify leading-loose">
-                    <p class="text-lg font-semibold">Fase Dars Lai</p>
-                    <p class="text-lg font-semibold">Fase Monstercrazy</p>
-                    <p class="text-lg font-semibold">Fase Sash</p>
-                    <p class="text-lg font-semibold">Fase PCDios</p>
-                    <p class="text-lg font-semibold">Fase Final</p>
+                    <p class="uppercase">
+                        Todas las partidas serán espejo, o sea, USM siempre empezará como sobreviviente en todas las
+                        fases.
+                    </p>
+                    <p class="uppercase">
+                        Los equipos deberán estar preparados para cada partida, con 10 minutos de anticipación.
+                    </p>
+                    <p class="text-base font-semibold">
+                        Fase Dars Lai: <span class="font-normal italic"> 08, 09, 10, 15 de Julio de 2022</span>
+                    </p>
+                    <ul class="list-disc list-inside ml-6">
+                        <li>20 equipos en 4 grupos de 5.</li>
+                        <li>1 partida de ida y vuelta contra USM. (killer/survivor)</li>
+                        <li>Killers máximo tier C.</li>
+                        <li>Los grupos se llamarán: Gryffindor, Slytherin, Ravenclaw y Hufflepuff.</li>
+                        <li>Pasan los 2 mejores de cada grupo y los 2 mejores terceros. (Total 10 equipos)</li>
+                        <li>MAPAS: Torre de Carbón, Midwich, Bosque del Refugio, Desguace/Desguace, Cantina.</li>
+                    </ul>
+                    <p class="text-base font-semibold">
+                        Fase Monstercrazy: <span class="font-normal italic">16, 17 de Julio de 2022</span>
+                    </p>
+                    <ul class="list-disc list-inside ml-6">
+                        <li>10 equipos en 2 grupos de 5.</li>
+                        <li>1 partida de ida y vuelta contra USM. (killer/survivor)</li>
+                        <li>Killers máximo tier C.</li>
+                        <li>Los grupos se llamarán: Scorpion y Sub-Zero.</li>
+                        <li>Pasan los 3 mejores de cada grupo.</li>
+                        <li>MAPAS: Torre de Carbón, Midwich, Bosque del Refugio, Desguace/Desguace, Cantina.</li>
+                    </ul>
+                    <p class="text-base font-semibold">
+                        Fase Sash: <span class="font-normal italic">30, 31 de Julio de 2022</span>
+                    </p>
+                    <ul class="list-disc list-inside ml-6">
+                        <li>6 equipos en 2 grupos de 3.</li>
+                        <li>2 partidas de ida y vuelta contra USM. (killer/survivor)</li>
+                        <li>Killers máximo tier B.</li>
+                        <li>Los grupos se llamarán: Saiyajin y Hokage.</li>
+                        <li>Pasan los 2 mejores de cada grupo.</li>
+                        <li>
+                            MAPAS: Pozo de Asfixia, Descanso de Azarov, Almacén Quejumbroso, Pantano (Rosa Pálida),
+                            Residencia Familiar y Bosque del Refugio.
+                        </li>
+                    </ul>
+                    <p class="text-base font-semibold">
+                        Fase PCDios: <span class="font-normal italic">05, 06 de Agosto de 2022</span>
+                    </p>
+                    <ul class="list-disc list-inside ml-6">
+                        <li>4 equipos en 2 grupos de 2.</li>
+                        <li>3 partidas de ida y vuelta contra USM. (killer/survivor)</li>
+                        <li>Killers máximo tier A.</li>
+                        <li>Los grupos se llamarán: Moonknight y GhostRider.</li>
+                        <li>Pasan el primero de cada grupo.</li>
+                        <li>MAPAS: Cantina, Fundición de la Miseria, Gasolinera.</li>
+                    </ul>
+                    <p class="text-base font-semibold">
+                        Fase Final: <span class="font-normal italic">07 de Agosto de 2022</span>
+                    </p>
+                    <ul class="list-disc list-inside ml-6">
+                        <li>2 equipos.</li>
+                        <li>4 partidas de ida y vuelta contra USM. (killer/survivor)</li>
+                        <li>Killers máximo tier S.</li>
+                        <li>Las recompensas Fernan quedan deshabilitadas.</li>
+                        <li>Los grupos se llamarán: Fans de Sorumi y Fans de Hanny.</li>
+                        <li>MAPAS: Torre de Carbón, Desguace, Arroyo del Tormento, Capilla del Padre Campbell.</li>
+                    </ul>
                 </div>
             </div>
             <div class="mb-5">
@@ -551,7 +551,7 @@
             <div class="mb-5">
                 <h1 class="text-2xl pb-2">Jugadores</h1>
                 <div>
-                    qwe
+                    Lista de jugadores
                 </div>
             </div>
         </div>
