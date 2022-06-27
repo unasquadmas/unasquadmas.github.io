@@ -1,7 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./*.html",
+    './index.html',
+    './overview.html',
+    './darslai.html',
+    './monstercrazy.html',
+    './sash.html',
+    './pcdios.html',
+    './final.html',
   ],
   darkMode: 'class',
   theme: {
