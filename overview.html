@@ -20,7 +20,7 @@
 
 <body class="bg-white dark:bg-slate-900 antialiased text-slate-500 dark:text-slate-400">
     <div class="sticky top-0 backdrop-blur max-w-7xl xl:m-auto sm:px-8">
-        <div class="mx-auto px-4 sm:px-6">
+        <div class="mx-auto px-4">
             <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
                 <div class="flex justify-start sm:w-0 sm:flex-1">
                     <a href="">
@@ -505,7 +505,7 @@
                     qwe
                 </div>
             </div>
-            <div class="mb-5" x-data="{ results: [] }" x-init="fetch('/resultados.json')
+            <div class="mb-5" x-data="{ results: [] }" x-init="fetch('http://unasquadmas.com/resultados.json')
                 .then(response => response.json())
                 .then(data => results = data);">
                 <h1 class="text-2xl pb-2">Resultados</h1>
