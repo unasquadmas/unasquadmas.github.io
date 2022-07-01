@@ -670,26 +670,6 @@ video {
   margin-bottom: -1px;
 }
 
-.mr-5 {
-  margin-right: 1.25rem;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
-}
-
-.mr-6 {
-  margin-right: 1.5rem;
-}
-
-.mb-8 {
-  margin-bottom: 2rem;
-}
-
-.mr-8 {
-  margin-right: 2rem;
-}
-
 .block {
   display: block;
 }
@@ -794,24 +774,6 @@ video {
   width: 83.333333%;
 }
 
-.w-max {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
-}
-
-.w-min {
-  width: -webkit-min-content;
-  width: -moz-min-content;
-  width: min-content;
-}
-
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-
 .min-w-max {
   min-width: -webkit-max-content;
   min-width: -moz-max-content;
@@ -856,10 +818,6 @@ video {
   flex-wrap: nowrap;
 }
 
-.place-items-center {
-  place-items: center;
-}
-
 .items-center {
   align-items: center;
 }
@@ -886,44 +844,6 @@ video {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
-.space-x-5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.25rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.space-y-5 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
-}
-
-.space-x-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-  margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.space-x-8 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(2rem * var(--tw-space-x-reverse));
-  margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.space-y-8 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
-}
-
-.space-y-reverse > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 1;
-}
-
-.space-x-reverse > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 1;
-}
-
 .overflow-hidden {
   overflow: hidden;
 }
@@ -934,18 +854,6 @@ video {
 
 .overflow-x-auto {
   overflow-x: auto;
-}
-
-.overflow-y-auto {
-  overflow-y: auto;
-}
-
-.overflow-y-hidden {
-  overflow-y: hidden;
-}
-
-.overflow-x-scroll {
-  overflow-x: scroll;
 }
 
 .whitespace-nowrap {
