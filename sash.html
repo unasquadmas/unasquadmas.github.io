@@ -99,162 +99,102 @@
                     </ul>
                     <script>
                         function menuThemeLight() {
-                            document.getElementById('theme-light').children[0].children[0].classList.remove(
-                                'stroke-slate-400');
-                            document.getElementById('theme-light').children[0].children[0].classList.remove(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-light').children[0].children[1].classList.remove(
-                                'stroke-slate-400');
-                            document.getElementById('theme-light').children[0].children[1].classList.remove(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-light').children[0].children[0].classList.add(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-light').children[0].children[0].classList.add(
-                                'stroke-sky-500');
-                            document.getElementById('theme-light').children[0].children[1].classList.add(
-                                'stroke-sky-500');
-                            document.getElementById("theme-light").classList.add("text-sky-500");
+                            let themelight = document.getElementById('theme-light');
+                            themelight.children[0].children[0].classList.remove('stroke-slate-400');
+                            themelight.children[0].children[0].classList.remove('dark:stroke-slate-500');
+                            themelight.children[0].children[1].classList.remove('stroke-slate-400');
+                            themelight.children[0].children[1].classList.remove('dark:stroke-slate-500');
+                            themelight.children[0].children[0].classList.add('fill-sky-400/20');
+                            themelight.children[0].children[0].classList.add('stroke-sky-500');
+                            themelight.children[0].children[1].classList.add('stroke-sky-500');
+                            themelight.classList.add('text-sky-500');
 
-                            document.getElementById('theme-dark').children[0].children[0].classList.remove(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
-                                'fill-sky-500');
-                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
-                                'fill-sky-500');
-                            document.getElementById('theme-dark').children[0].children[0].classList.add(
-                                'fill-transparent');
-                            document.getElementById('theme-dark').children[0].children[1].classList.add(
-                                'fill-slate-400');
-                            document.getElementById('theme-dark').children[0].children[1].classList.add(
-                                'dark:fill-slate-500');
-                            document.getElementById('theme-dark').children[0].children[2].classList.add(
-                                'fill-slate-400');
-                            document.getElementById('theme-dark').children[0].children[2].classList.add(
-                                'dark:fill-slate-500');
-                            document.getElementById("theme-dark").classList.remove("text-sky-500");
+                            let themedark = document.getElementById('theme-dark');
+                            themedark.children[0].children[0].classList.remove('fill-sky-400/20');
+                            themedark.children[0].children[1].classList.remove('fill-sky-500');
+                            themedark.children[0].children[2].classList.remove('fill-sky-500');
+                            themedark.children[0].children[0].classList.add('fill-transparent');
+                            themedark.children[0].children[1].classList.add('fill-slate-400');
+                            themedark.children[0].children[1].classList.add('dark:fill-slate-500');
+                            themedark.children[0].children[2].classList.add('fill-slate-400');
+                            themedark.children[0].children[2].classList.add('dark:fill-slate-500');
+                            themedark.classList.remove('text-sky-500');
 
-                            document.getElementById('theme-system').children[0].children[0].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById('theme-system').children[0].children[0].classList.remove(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-system').children[0].children[1].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById('theme-system').children[0].children[0].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-system').children[0].children[0].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-system').children[0].children[1].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-system').children[0].children[1].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById("theme-system").classList.remove("text-sky-500");
-
-                            localStorage.theme = 'light';
-                            document.documentElement.classList.remove('dark');
+                            let themesystem = document.getElementById('theme-system');
+                            themesystem.children[0].children[0].classList.remove('stroke-sky-500');
+                            themesystem.children[0].children[0].classList.remove('fill-sky-400/20');
+                            themesystem.children[0].children[1].classList.remove('stroke-sky-500');
+                            themesystem.children[0].children[0].classList.add('stroke-slate-400');
+                            themesystem.children[0].children[0].classList.add('dark:stroke-slate-500');
+                            themesystem.children[0].children[1].classList.add('stroke-slate-400');
+                            themesystem.children[0].children[1].classList.add('dark:stroke-slate-500');
+                            themesystem.classList.remove('text-sky-500');
                         }
 
                         function menuThemeDark() {
-                            document.getElementById('theme-dark').children[0].children[0].classList.remove(
-                                'fill-transparent');
-                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
-                                'fill-slate-400');
-                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
-                                'dark:fill-slate-500');
-                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
-                                'fill-slate-400');
-                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
-                                'dark:fill-slate-500');
-                            document.getElementById('theme-dark').children[0].children[0].classList.add(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-dark').children[0].children[1].classList.add(
-                                'fill-sky-500');
-                            document.getElementById('theme-dark').children[0].children[2].classList.add(
-                                'fill-sky-500');
-                            document.getElementById("theme-dark").classList.add("text-sky-500");
+                            let themedark = document.getElementById('theme-dark');
+                            themedark.children[0].children[0].classList.remove('fill-transparent');
+                            themedark.children[0].children[1].classList.remove('fill-slate-400');
+                            themedark.children[0].children[1].classList.remove('dark:fill-slate-500');
+                            themedark.children[0].children[2].classList.remove('fill-slate-400');
+                            themedark.children[0].children[2].classList.remove('dark:fill-slate-500');
+                            themedark.children[0].children[0].classList.add('fill-sky-400/20');
+                            themedark.children[0].children[1].classList.add('fill-sky-500');
+                            themedark.children[0].children[2].classList.add('fill-sky-500');
+                            themedark.classList.add('text-sky-500');
 
-                            document.getElementById('theme-light').children[0].children[0].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-light').children[0].children[0].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-light').children[0].children[1].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-light').children[0].children[1].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-light').children[0].children[0].classList.remove(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-light').children[0].children[0].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById('theme-light').children[0].children[1].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById("theme-light").classList.remove("text-sky-500");
+                            let themelight = document.getElementById('theme-light');
+                            themelight.children[0].children[0].classList.add('stroke-slate-400');
+                            themelight.children[0].children[0].classList.add('dark:stroke-slate-500');
+                            themelight.children[0].children[1].classList.add('stroke-slate-400');
+                            themelight.children[0].children[1].classList.add('dark:stroke-slate-500');
+                            themelight.children[0].children[0].classList.remove('fill-sky-400/20');
+                            themelight.children[0].children[0].classList.remove('stroke-sky-500');
+                            themelight.children[0].children[1].classList.remove('stroke-sky-500');
+                            themelight.classList.remove('text-sky-500');
 
-                            document.getElementById('theme-system').children[0].children[0].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-system').children[0].children[0].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-system').children[0].children[1].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-system').children[0].children[1].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-system').children[0].children[0].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById('theme-system').children[0].children[0].classList.remove(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-system').children[0].children[1].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById("theme-system").classList.remove("text-sky-500");
+                            let themesystem = document.getElementById('theme-system');
+                            themesystem.children[0].children[0].classList.add('stroke-slate-400');
+                            themesystem.children[0].children[0].classList.add('dark:stroke-slate-500');
+                            themesystem.children[0].children[1].classList.add('stroke-slate-400');
+                            themesystem.children[0].children[1].classList.add('dark:stroke-slate-500');
+                            themesystem.children[0].children[0].classList.remove('stroke-sky-500');
+                            themesystem.children[0].children[0].classList.remove('fill-sky-400/20');
+                            themesystem.children[0].children[1].classList.remove('stroke-sky-500');
+                            themesystem.classList.remove('text-sky-500');
                         }
 
                         function menuThemeSystem() {
-                            document.getElementById('theme-system').children[0].children[0].classList.remove(
-                                'stroke-slate-400');
-                            document.getElementById('theme-system').children[0].children[0].classList.remove(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-system').children[0].children[1].classList.remove(
-                                'stroke-slate-400');
-                            document.getElementById('theme-system').children[0].children[1].classList.remove(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-system').children[0].children[0].classList.add(
-                                'stroke-sky-500');
-                            document.getElementById('theme-system').children[0].children[0].classList.add(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-system').children[0].children[1].classList.add(
-                                'stroke-sky-500');
-                            document.getElementById("theme-system").classList.add("text-sky-500");
+                            let themesystem = document.getElementById('theme-system');
+                            themesystem.children[0].children[0].classList.remove('stroke-slate-400');
+                            themesystem.children[0].children[0].classList.remove('dark:stroke-slate-500');
+                            themesystem.children[0].children[1].classList.remove('stroke-slate-400');
+                            themesystem.children[0].children[1].classList.remove('dark:stroke-slate-500');
+                            themesystem.children[0].children[0].classList.add('stroke-sky-500');
+                            themesystem.children[0].children[0].classList.add('fill-sky-400/20');
+                            themesystem.children[0].children[1].classList.add('stroke-sky-500');
+                            themesystem.classList.add('text-sky-500');
 
-                            document.getElementById('theme-light').children[0].children[0].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-light').children[0].children[0].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-light').children[0].children[1].classList.add(
-                                'stroke-slate-400');
-                            document.getElementById('theme-light').children[0].children[1].classList.add(
-                                'dark:stroke-slate-500');
-                            document.getElementById('theme-light').children[0].children[0].classList.remove(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-light').children[0].children[0].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById('theme-light').children[0].children[1].classList.remove(
-                                'stroke-sky-500');
-                            document.getElementById("theme-light").classList.remove("text-sky-500");
+                            let themelight = document.getElementById('theme-light');
+                            themelight.children[0].children[0].classList.add('stroke-slate-400');
+                            themelight.children[0].children[0].classList.add('dark:stroke-slate-500');
+                            themelight.children[0].children[1].classList.add('stroke-slate-400');
+                            themelight.children[0].children[1].classList.add('dark:stroke-slate-500');
+                            themelight.children[0].children[0].classList.remove('fill-sky-400/20');
+                            themelight.children[0].children[0].classList.remove('stroke-sky-500');
+                            themelight.children[0].children[1].classList.remove('stroke-sky-500');
+                            themelight.classList.remove('text-sky-500');
 
-                            document.getElementById('theme-dark').children[0].children[0].classList.remove(
-                                'fill-sky-400/20');
-                            document.getElementById('theme-dark').children[0].children[1].classList.remove(
-                                'fill-sky-500');
-                            document.getElementById('theme-dark').children[0].children[2].classList.remove(
-                                'fill-sky-500');
-                            document.getElementById('theme-dark').children[0].children[0].classList.add(
-                                'fill-transparent');
-                            document.getElementById('theme-dark').children[0].children[1].classList.add(
-                                'fill-slate-400');
-                            document.getElementById('theme-dark').children[0].children[1].classList.add(
-                                'dark:fill-slate-500');
-                            document.getElementById('theme-dark').children[0].children[2].classList.add(
-                                'fill-slate-400');
-                            document.getElementById('theme-dark').children[0].children[2].classList.add(
-                                'dark:fill-slate-500');
-                            document.getElementById("theme-dark").classList.remove("text-sky-500");
+                            let themedark = document.getElementById('theme-dark');
+                            themedark.children[0].children[0].classList.remove('fill-sky-400/20');
+                            themedark.children[0].children[1].classList.remove('fill-sky-500');
+                            themedark.children[0].children[2].classList.remove('fill-sky-500');
+                            themedark.children[0].children[0].classList.add('fill-transparent');
+                            themedark.children[0].children[1].classList.add('fill-slate-400');
+                            themedark.children[0].children[1].classList.add('dark:fill-slate-500');
+                            themedark.children[0].children[2].classList.add('fill-slate-400');
+                            themedark.children[0].children[2].classList.add('dark:fill-slate-500');
+                            themedark.classList.remove('text-sky-500');
                         }
 
                         if (localStorage.theme === 'light') {
