@@ -1,120 +1,120 @@
 [{
     "id": 1,
-    "team": "Erebus",
-    "matches": 0,
-    "killerpoints": 0,
-    "survivorpoints": 0
-}, {
-    "id": 2,
-    "team": "Cavernas",
-    "matches": 0,
-    "killerpoints": 0,
-    "survivorpoints": 0
-}, {
-    "id": 3,
-    "team": "Quimera S.G",
-    "matches": 0,
-    "killerpoints": 0,
-    "survivorpoints": 0
-}, {
-    "id": 4,
-    "team": "Scenario",
-    "matches": 0,
-    "killerpoints": 0,
-    "survivorpoints": 0
-}, {
-    "id": 5,
-    "team": "Envision",
-    "matches": 0,
-    "killerpoints": 0,
-    "survivorpoints": 0
-}, {
-    "id": 6,
-    "team": "The boys",
-    "matches": 0,
-    "killerpoints": 0,
-    "survivorpoints": 0
-}, {
-    "id": 7,
-    "team": "Randomnia",
-    "matches": 0,
-    "killerpoints": 0,
-    "survivorpoints": 0
-}, {
-    "id": 8,
     "team": "Mercyless",
     "matches": 0,
     "killerpoints": 0,
     "survivorpoints": 0
 }, {
+    "id": 2,
+    "team": "NK Team",
+    "matches": 0,
+    "killerpoints": 0,
+    "survivorpoints": 0
+}, {
+    "id": 3,
+    "team": "Kesi Friends",
+    "matches": 0,
+    "killerpoints": 0,
+    "survivorpoints": 0
+}, {
+    "id": 4,
+    "team": "Envision",
+    "matches": 0,
+    "killerpoints": 0,
+    "survivorpoints": 0
+}, {
+    "id": 5,
+    "team": "Scenario",
+    "matches": 0,
+    "killerpoints": 0,
+    "survivorpoints": 0
+}, {
+    "id": 6,
+    "team": "North Kate",
+    "matches": 0,
+    "killerpoints": 0,
+    "survivorpoints": 0
+}, {
+    "id": 7,
+    "team": "Iniciativa V.",
+    "matches": 0,
+    "killerpoints": 0,
+    "survivorpoints": 0
+}, {
+    "id": 8,
+    "team": "Nightstalkers",
+    "matches": 0,
+    "killerpoints": 0,
+    "survivorpoints": 0
+}, {
     "id": 9,
-    "team": "Akatsuki",
+    "team": "Erebus",
     "matches": 0,
     "killerpoints": 0,
     "survivorpoints": 0
 }, {
     "id": 10,
-    "team": "Equipo 10",
+    "team": "Oozma Kappa",
     "matches": 0,
     "killerpoints": 0,
     "survivorpoints": 0
 }, {
     "id": 11,
-    "team": "Equipo 11",
+    "team": "Las Claudettes",
     "matches": 0,
     "killerpoints": 0,
     "survivorpoints": 0
 }, {
     "id": 12,
-    "team": "Equipo 12",
+    "team": "Akatsuki",
     "matches": 0,
     "killerpoints": 0,
     "survivorpoints": 0
 }, {
     "id": 13,
-    "team": "Equipo 13",
+    "team": "Bengals E.",
     "matches": 0,
     "killerpoints": 0,
     "survivorpoints": 0
 }, {
     "id": 14,
-    "team": "Equipo 14",
+    "team": "Cavernas",
     "matches": 0,
     "killerpoints": 0,
     "survivorpoints": 0
 }, {
     "id": 15,
-    "team": "Equipo 15",
+    "team": "Quimera SG",
     "matches": 0,
     "killerpoints": 0,
     "survivorpoints": 0
 }, {
     "id": 16,
-    "team": "Equipo 16",
+    "team": "Gravity Bunnys",
     "matches": 0,
     "killerpoints": 0,
     "survivorpoints": 0
 }, {
     "id": 17,
-    "team": "Equipo 17",
+    "team": "Loopeo Gatuno",
     "matches": 0,
     "killerpoints": 0,
     "survivorpoints": 0
 }, {
     "id": 18,
-    "team": "Equipo 18",
+    "team": "Vox Inferis",
     "matches": 0,
     "killerpoints": 0,
     "survivorpoints": 0
 }, {
     "id": 19,
-    "team": "Equipo 19",
+    "team": "Randomnia",
     "matches": 0,
     "killerpoints": 0,
     "survivorpoints": 0
 }, {
     "id": 20,
-    "team": "Equipo 20",
+    "team": "The Boys",
     "matches": 0,
     "killerpoints": 0,
     "survivorpoints": 0
